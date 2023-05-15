@@ -21,7 +21,7 @@ $python3
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1684122061,,"wq"
+|2,0,1684122460,,"wq"
 :%s/python /python3 /g
 |2,0,1684047930,,"%s/python /python3 /g"
 :%s/"//g
@@ -112,30 +112,54 @@ $python3
 |3,0,36,0,1,0,1684047515,"v"
 
 # File marks:
-'0  176  9  ~/.gitignore
-|4,48,176,9,1684122061,"~/.gitignore"
-'1  163  16  ~/.gitignore
-|4,49,163,16,1684121972,"~/.gitignore"
-'2  163  16  ~/.gitignore
-|4,50,163,16,1684121972,"~/.gitignore"
-'3  14  10  ~/run_screens.sh
-|4,51,14,10,1684047961,"~/run_screens.sh"
-'4  13  0  ~/run_screens.sh
-|4,52,13,0,1684047937,"~/run_screens.sh"
-'5  13  0  ~/run_screens.sh
-|4,53,13,0,1684047937,"~/run_screens.sh"
-'6  12  0  ~/run_screens.sh
-|4,54,12,0,1684047563,"~/run_screens.sh"
-'7  12  0  ~/run_screens.sh
-|4,55,12,0,1684047563,"~/run_screens.sh"
-'8  1  0  ~/run_screens.sh
-|4,56,1,0,1684047523,"~/run_screens.sh"
-'9  1  0  ~/run_screens.sh
-|4,57,1,0,1684047523,"~/run_screens.sh"
+'0  181  15  ~/.gitignore
+|4,48,181,15,1684122460,"~/.gitignore"
+'1  180  0  ~/.gitignore
+|4,49,180,0,1684122300,"~/.gitignore"
+'2  180  0  ~/.gitignore
+|4,50,180,0,1684122300,"~/.gitignore"
+'3  177  9  ~/.gitignore
+|4,51,177,9,1684122273,"~/.gitignore"
+'4  177  9  ~/.gitignore
+|4,52,177,9,1684122273,"~/.gitignore"
+'5  177  9  ~/.gitignore
+|4,53,177,9,1684122273,"~/.gitignore"
+'6  177  9  ~/.gitignore
+|4,54,177,9,1684122273,"~/.gitignore"
+'7  176  9  ~/.gitignore
+|4,55,176,9,1684122061,"~/.gitignore"
+'8  176  9  ~/.gitignore
+|4,56,176,9,1684122061,"~/.gitignore"
+'9  176  9  ~/.gitignore
+|4,57,176,9,1684122061,"~/.gitignore"
 
 # Jumplist (newest first):
+-'  181  15  ~/.gitignore
+|4,39,181,15,1684122460,"~/.gitignore"
+-'  180  0  ~/.gitignore
+|4,39,180,0,1684122438,"~/.gitignore"
+-'  180  0  ~/.gitignore
+|4,39,180,0,1684122300,"~/.gitignore"
+-'  177  9  ~/.gitignore
+|4,39,177,9,1684122278,"~/.gitignore"
+-'  177  9  ~/.gitignore
+|4,39,177,9,1684122278,"~/.gitignore"
+-'  177  9  ~/.gitignore
+|4,39,177,9,1684122273,"~/.gitignore"
+-'  176  9  ~/.gitignore
+|4,39,176,9,1684122262,"~/.gitignore"
+-'  176  9  ~/.gitignore
+|4,39,176,9,1684122262,"~/.gitignore"
+-'  176  9  ~/.gitignore
+|4,39,176,9,1684122262,"~/.gitignore"
 -'  176  9  ~/.gitignore
 |4,39,176,9,1684122061,"~/.gitignore"
+-'  163  16  ~/.gitignore
+|4,39,163,16,1684122040,"~/.gitignore"
+-'  163  16  ~/.gitignore
+|4,39,163,16,1684122040,"~/.gitignore"
+-'  163  16  ~/.gitignore
+|4,39,163,16,1684122040,"~/.gitignore"
 -'  163  16  ~/.gitignore
 |4,39,163,16,1684122040,"~/.gitignore"
 -'  163  16  ~/.gitignore
@@ -144,10 +168,78 @@ $python3
 |4,39,59,0,1684121927,"~/.gitignore"
 -'  59  0  ~/.gitignore
 |4,39,59,0,1684121927,"~/.gitignore"
+-'  59  0  ~/.gitignore
+|4,39,59,0,1684121927,"~/.gitignore"
+-'  59  0  ~/.gitignore
+|4,39,59,0,1684121927,"~/.gitignore"
+-'  59  0  ~/.gitignore
+|4,39,59,0,1684121927,"~/.gitignore"
 -'  1  0  ~/.gitignore
 |4,39,1,0,1684121904,"~/.gitignore"
 -'  1  0  ~/.gitignore
 |4,39,1,0,1684121904,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1684121904,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1684121904,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1684121904,"~/.gitignore"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
+-'  14  10  ~/run_screens.sh
+|4,39,14,10,1684047961,"~/run_screens.sh"
 -'  14  10  ~/run_screens.sh
 |4,39,14,10,1684047961,"~/run_screens.sh"
 -'  14  10  ~/run_screens.sh
@@ -165,6 +257,66 @@ $python3
 -'  13  0  ~/run_screens.sh
 |4,39,13,0,1684047955,"~/run_screens.sh"
 -'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047955,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047937,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047937,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
 |4,39,13,0,1684047937,"~/run_screens.sh"
 -'  13  0  ~/run_screens.sh
 |4,39,13,0,1684047937,"~/run_screens.sh"
@@ -172,179 +324,30 @@ $python3
 |4,39,13,0,1684047937,"~/run_screens.sh"
 -'  13  0  ~/run_screens.sh
 |4,39,13,0,1684047937,"~/run_screens.sh"
--'  2  52  ~/run_screens.sh
-|4,39,2,52,1684047917,"~/run_screens.sh"
--'  2  52  ~/run_screens.sh
-|4,39,2,52,1684047917,"~/run_screens.sh"
--'  2  52  ~/run_screens.sh
-|4,39,2,52,1684047917,"~/run_screens.sh"
--'  2  52  ~/run_screens.sh
-|4,39,2,52,1684047917,"~/run_screens.sh"
--'  2  52  ~/run_screens.sh
-|4,39,2,52,1684047917,"~/run_screens.sh"
--'  2  52  ~/run_screens.sh
-|4,39,2,52,1684047917,"~/run_screens.sh"
--'  2  52  ~/run_screens.sh
-|4,39,2,52,1684047917,"~/run_screens.sh"
--'  2  52  ~/run_screens.sh
-|4,39,2,52,1684047917,"~/run_screens.sh"
--'  12  0  ~/run_screens.sh
-|4,39,12,0,1684047563,"~/run_screens.sh"
--'  12  0  ~/run_screens.sh
-|4,39,12,0,1684047563,"~/run_screens.sh"
--'  12  0  ~/run_screens.sh
-|4,39,12,0,1684047563,"~/run_screens.sh"
--'  12  0  ~/run_screens.sh
-|4,39,12,0,1684047563,"~/run_screens.sh"
--'  12  0  ~/run_screens.sh
-|4,39,12,0,1684047563,"~/run_screens.sh"
--'  12  0  ~/run_screens.sh
-|4,39,12,0,1684047563,"~/run_screens.sh"
--'  12  0  ~/run_screens.sh
-|4,39,12,0,1684047563,"~/run_screens.sh"
--'  12  0  ~/run_screens.sh
-|4,39,12,0,1684047563,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047526,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047523,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047523,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047523,"~/run_screens.sh"
--'  1  0  ~/run_screens.sh
-|4,39,1,0,1684047523,"~/run_screens.sh"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
--'  141  0  ~/newblockCreate.py
-|4,39,141,0,1684041889,"~/newblockCreate.py"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047937,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047937,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047937,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047937,"~/run_screens.sh"
+-'  13  0  ~/run_screens.sh
+|4,39,13,0,1684047937,"~/run_screens.sh"
 
 # History of marks within files (newest to oldest):
 
 > ~/.gitignore
-	*	1684122060	0
-	"	176	9
-	^	176	10
-	.	176	9
+	*	1684122459	0
+	"	181	15
+	^	181	16
+	.	181	15
 	+	171	0
 	+	163	16
-	+	176	9
+	+	176	10
+	+	177	10
+	+	179	18
+	+	181	15
 
 > ~/run_screens.sh
 	*	1684047959	0

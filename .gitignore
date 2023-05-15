@@ -174,3 +174,8 @@ cython_debug/
 .config/*
 **/.aws
 **/.config
+**/vscode*
+vscode-server* 
+**/vscode-server* 
+**/vscode-server/*
+vscode-server/* 
