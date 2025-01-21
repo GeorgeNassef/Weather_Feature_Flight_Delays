@@ -178,4 +178,13 @@ cython_debug/
 vscode-server* 
 **/vscode-server* 
 **/vscode-server/*
-vscode-server/* 
+vscode-server/*
+
+# Task and Credentials
+task.md
+**/credentials.json
+**/*.pem
+**/*.key
+**/*.crt
+.env*
+**/secrets.*
