@@ -1,4 +1,22 @@
-"""Data processing functions for weather and flight data."""
+"""
+Data processing functions for weather and flight data.
+
+This module provides the core functionality for processing weather observations
+and flight data. It handles data loading, timezone conversions, and matching
+of weather conditions with flight events.
+
+Key Features:
+    - Timezone-aware processing of flight and weather timestamps
+    - Efficient indexing of weather observations for quick lookup
+    - Handling of flight diversions and schedule changes
+    - Data validation and error handling
+
+The DataProcessor class serves as the main entry point for all data processing
+operations, maintaining timezone information and processing state.
+
+Authors: George Nassef, Will Landau
+Copyright © 2021
+"""
 
 import csv
 from pathlib import Path
@@ -8,14 +26,49 @@ import pandas as pd
 from .models import WeatherData, WeatherObservation, Flight, Diversion
 
 class DataProcessor:
-    """Handles processing of weather and flight data."""
+    """
+    Main processor for weather and flight data analysis.
+    
+    This class handles all aspects of data processing including:
+    - Loading and parsing weather observations
+    - Processing flight records including diversions
+    - Converting timestamps between timezones
+    - Matching weather conditions with flight events
+    
+    The processor maintains timezone information for airports to ensure
+    accurate temporal analysis across different regions.
+    """
     
     def __init__(self, timezone_file: Path):
-        """Initialize with airport timezone data."""
+        """
+        Initialize the data processor.
+        
+        Args:
+            timezone_file (Path): Path to CSV file containing airport timezone mappings.
+                                Expected format: airport_code,timezone_name
+                                Example: "JFK,America/New_York"
+        
+        Raises:
+            FileNotFoundError: If timezone_file does not exist
+            ValueError: If timezone_file is malformed
+        """
         self.airport_timezones = self._load_timezone_data(timezone_file)
         
     def _load_timezone_data(self, filepath: Path) -> Dict[str, str]:
-        """Load airport timezone mappings."""
+        """
+        Load airport timezone mappings from CSV file.
+        
+        Args:
+            filepath (Path): Path to CSV file containing airport/timezone pairs
+        
+        Returns:
+            Dict[str, str]: Mapping of airport codes to timezone names
+                           Example: {"JFK": "America/New_York"}
+        
+        Raises:
+            FileNotFoundError: If file does not exist
+            ValueError: If file format is invalid
+        """
         timezones = {}
         with open(filepath, 'r') as f:
             reader = csv.reader(f)
@@ -25,7 +78,20 @@ class DataProcessor:
         return timezones
     
     def convert_to_utc(self, airport: str, time: arrow.Arrow) -> arrow.Arrow:
-        """Convert local time to UTC based on airport timezone."""
+        """
+        Convert local time to UTC based on airport timezone.
+        
+        Args:
+            airport (str): Airport code to determine timezone
+            time (arrow.Arrow): Local time to convert
+        
+        Returns:
+            arrow.Arrow: Time converted to UTC
+        
+        Raises:
+            ValueError: If airport code not found in timezone data
+            arrow.ParserError: If timezone conversion fails
+        """
         if airport not in self.airport_timezones:
             raise ValueError(f"No timezone data for airport: {airport}")
             
@@ -33,7 +99,23 @@ class DataProcessor:
         return time.to('UTC')
     
     def process_weather_file(self, filepath: Path) -> WeatherData:
-        """Process weather data file into structured format."""
+        """
+        Process ASOS weather data file into structured format.
+        
+        Reads and parses weather observations from ASOS format file,
+        creating an indexed structure for efficient temporal lookup.
+        Handles the standard ASOS file format with 6-line header.
+        
+        Args:
+            filepath (Path): Path to ASOS format weather data file
+        
+        Returns:
+            WeatherData: Processed weather data with time indexing
+        
+        Raises:
+            FileNotFoundError: If weather file not found
+            ValueError: If file format is invalid
+        """
         try:
             with open(filepath, 'r') as file:
                 reader = csv.reader(file)
@@ -60,7 +142,24 @@ class DataProcessor:
             raise FileNotFoundError(f"Weather data file not found: {filepath}")
             
     def process_flight_data(self, filepath: Path) -> List[Flight]:
-        """Process flight data from CSV into structured format."""
+        """
+        Process flight data from CSV into structured format.
+        
+        Reads flight records from BTS format CSV file, handling:
+        - Timezone conversions for departure/arrival times
+        - Flight diversions (up to 5 per flight)
+        - Data validation and duplicate removal
+        
+        Args:
+            filepath (Path): Path to BTS format flight data CSV
+        
+        Returns:
+            List[Flight]: List of processed flight records
+        
+        Raises:
+            FileNotFoundError: If flight data file not found
+            pd.errors.EmptyDataError: If file contains no valid data
+        """
         df = pd.read_csv(filepath, low_memory=False)
         df = df[df.Duplicate != "Y"]  # Remove duplicates
         
@@ -77,7 +176,24 @@ class DataProcessor:
         return flights
     
     def _create_flight_from_row(self, row: pd.Series) -> Optional[Flight]:
-        """Create Flight object from DataFrame row."""
+        """
+        Create Flight object from a single DataFrame row.
+        
+        Processes a row of flight data, handling:
+        - Time parsing and timezone conversion
+        - Validation of required fields
+        - Processing of any diversions
+        
+        Args:
+            row (pd.Series): Single row from flight data DataFrame
+        
+        Returns:
+            Optional[Flight]: Processed flight record, or None if invalid
+        
+        Notes:
+            Returns None instead of raising exceptions for invalid records
+            to allow processing to continue with valid records.
+        """
         try:
             # Process departure time
             dep_time = self._format_time(row['CRSDepTime'])
@@ -112,12 +228,43 @@ class DataProcessor:
             return None
     
     def _format_time(self, time: int) -> str:
-        """Format time integer to HHMM string."""
+        """
+        Format time integer to HHMM string.
+        
+        Converts integer time representation (e.g., 830 for 8:30)
+        to standard 4-digit string format (e.g., "0830").
+        
+        Args:
+            time (int): Time as integer (0-2359)
+        
+        Returns:
+            str: Time as 4-digit string (e.g., "0830")
+        
+        Raises:
+            ValueError: If time is negative or >= 2400
+        """
         time_str = str(int(time))
         return time_str.zfill(4)
     
     def _process_diversions(self, row: pd.Series) -> List[Diversion]:
-        """Process diversion information from flight data."""
+        """
+        Process diversion information from flight data.
+        
+        Handles up to 5 diversions per flight, processing:
+        - Diversion airport codes
+        - Arrival/departure times at each diversion
+        - Timezone conversions for all timestamps
+        
+        Args:
+            row (pd.Series): Flight data row containing diversion fields
+        
+        Returns:
+            List[Diversion]: Processed diversions in chronological order
+        
+        Notes:
+            Skips invalid diversions while processing valid ones
+            Ensures chronological ordering of events
+        """
         diversions = []
         num_divs = int(row['DivAirportLandings'])
         

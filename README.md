@@ -2,6 +2,12 @@
 
 A Python package for processing and analyzing weather observations and flight data to create datasets for flight delay prediction models. This tool matches weather conditions with flight events, handling timezone conversions and flight diversions.
 
+## Authors
+- George Nassef
+- Will Landau
+
+Copyright © 2021
+
 ## Data Sources
 
 This project uses the following data sources:

@@ -1,4 +1,26 @@
-"""Main entry point for the weather flight analyzer."""
+"""
+Main entry point for the weather flight analyzer.
+
+This module provides the command-line interface and orchestrates the overall
+data processing workflow. It handles:
+- Command line argument parsing
+- Data directory management
+- Coordinating processing of flight and weather data
+- Output generation
+
+The processing is done month by month to manage memory usage with large datasets.
+Weather data is matched to flights based on departure and arrival times.
+
+Example Usage:
+    python -m weather_flight_analyzer \
+        --timezone-file /path/to/timezones.csv \
+        --flight-data-dir /path/to/flights \
+        --weather-data-dir /path/to/weather \
+        --output-dir /path/to/output
+
+Authors: George Nassef, Will Landau
+Copyright © 2021
+"""
 
 import sys
 import argparse
@@ -10,7 +32,22 @@ from .data_processor import DataProcessor
 from .models import Flight, WeatherData
 
 def parse_args() -> argparse.Namespace:
-    """Parse command line arguments."""
+    """
+    Parse and validate command line arguments.
+    
+    Defines and processes the command line interface, ensuring all required
+    paths are provided and have the correct format.
+    
+    Returns:
+        argparse.Namespace: Validated command line arguments
+            timezone_file: Path to airport timezone mapping file
+            flight_data_dir: Directory containing flight data CSV files
+            weather_data_dir: Directory containing weather data files
+            output_dir: Directory for processed output files
+    
+    Raises:
+        SystemExit: If required arguments are missing or invalid
+    """
     parser = argparse.ArgumentParser(
         description='Process weather and flight data for delay prediction.'
     )
@@ -46,7 +83,26 @@ def process_monthly_data(
     weather_dir: Path,
     output_dir: Path
 ) -> None:
-    """Process one month of flight and weather data."""
+    """
+    Process one month of flight and weather data.
+    
+    For each flight in the monthly data:
+    1. Loads and processes the flight record
+    2. Finds corresponding weather observations for departure/arrival
+    3. Matches weather conditions with flight events
+    4. Saves processed data to output directory
+    
+    Args:
+        processor (DataProcessor): Initialized data processor instance
+        flight_file (Path): Path to monthly flight data CSV
+        weather_dir (Path): Directory containing daily weather files
+        output_dir (Path): Directory to save processed results
+    
+    Notes:
+        - Weather files should be named YYYYMMDD.txt
+        - Output is saved as processed_YYYY_MM.csv
+        - Skips flights with missing weather data
+    """
     print(f"Processing {flight_file.name}...")
     
     # Process flights
@@ -82,7 +138,24 @@ def process_monthly_data(
         print(f"Saved processed data to {output_file}")
 
 def main() -> None:
-    """Main execution function."""
+    """
+    Main execution function for the weather flight analyzer.
+    
+    Workflow:
+    1. Parse command line arguments
+    2. Initialize data processor
+    3. Process each month's flight data:
+       - Load flight records
+       - Match with weather observations
+       - Save processed results
+    4. Handle any errors and provide feedback
+    
+    The function processes data month by month to manage memory usage
+    and provide progress feedback to the user.
+    
+    Raises:
+        SystemExit: On critical errors that prevent processing
+    """
     args = parse_args()
     
     # Ensure output directory exists
