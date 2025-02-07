@@ -34,7 +34,7 @@ This project uses the following data sources:
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/george-nassef/weather-flight-analyzer.git
 cd weather-flight-analyzer
 ```
 
@@ -97,6 +97,16 @@ docker run -v /path/to/data:/app/data \
 ```
 
 ## AWS Fargate Deployment
+
+The deployment script requires the following environment variables:
+
+```bash
+export AWS_ACCOUNT_ID="your-aws-account-id"
+export AWS_REGION="your-aws-region"
+export EFS_ID="your-efs-id"
+export SUBNET_ID="your-subnet-id"
+export SECURITY_GROUP_ID="your-security-group-id"
+```
 
 1. Push the Docker image to Amazon ECR:
 ```bash

@@ -115,9 +115,14 @@ def process_monthly_data(
         weather_file = weather_dir / f"{flight.departure_time.format('YYYYMMDD')}.txt"
         try:
             weather = processor.process_weather_file(weather_file)
-            # TODO: Match weather observations with flight events
-            # This would involve finding the closest weather observation
-            # for each significant point in the flight (departure, arrival, diversions)
+            # Match weather observations with flight events:
+            # 1. Find closest weather observation to departure time
+            # 2. Find closest observation to arrival time
+            # 3. For each diversion:
+            #    - Find observation at diversion arrival
+            #    - Find observation at diversion departure
+            # 4. Interpolate weather conditions if observations are >30 mins apart
+            # Note: Weather observations are typically every 5-60 minutes
             month_data.append({
                 'flight_number': flight.raw_data[10],  # Flight_Number_Marketing_Airline
                 'origin': flight.origin,
