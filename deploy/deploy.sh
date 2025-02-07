@@ -10,11 +10,13 @@ if ! command -v aws &> /dev/null; then
 fi
 
 # Check for required environment variables
-if [ -z "$AWS_ACCOUNT_ID" ] || [ -z "$AWS_REGION" ] || [ -z "$EFS_ID" ]; then
+if [ -z "$AWS_ACCOUNT_ID" ] || [ -z "$AWS_REGION" ] || [ -z "$EFS_ID" ] || [ -z "$SUBNET_ID" ] || [ -z "$SECURITY_GROUP_ID" ]; then
     echo "Required environment variables not set. Please set:"
-    echo "  AWS_ACCOUNT_ID  (e.g., 123456789012)"
-    echo "  AWS_REGION     (e.g., us-east-1)"
-    echo "  EFS_ID        (e.g., fs-12345678)"
+    echo "  AWS_ACCOUNT_ID      (e.g., 123456789012)"
+    echo "  AWS_REGION         (e.g., us-east-1)"
+    echo "  EFS_ID            (e.g., fs-12345678)"
+    echo "  SUBNET_ID         (e.g., subnet-abcd1234)"
+    echo "  SECURITY_GROUP_ID (e.g., sg-abcd1234)"
     exit 1
 fi
 
@@ -65,7 +67,7 @@ if aws ecs describe-services --cluster weather-flight-analyzer --services weathe
         --task-definition "$TASK_DEF_ARN" \
         --desired-count 1 \
         --launch-type FARGATE \
-        --network-configuration "awsvpcConfiguration={subnets=[subnet-REPLACE_ME],securityGroups=[sg-REPLACE_ME],assignPublicIp=ENABLED}"
+        --network-configuration "awsvpcConfiguration={subnets=[$SUBNET_ID],securityGroups=[$SECURITY_GROUP_ID],assignPublicIp=ENABLED}"
 else
     # Update existing service
     aws ecs update-service \

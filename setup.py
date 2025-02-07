@@ -34,15 +34,17 @@ setup(
     description="A tool for analyzing weather and flight data for delay prediction",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/weather-flight-analyzer",
+    url="https://github.com/george-nassef/weather-flight-analyzer",
     packages=find_packages(),
     # Package classification
     classifiers=[
         # Development status
+        "Development Status :: 3 - Alpha",
         
         # Intended audience
-+        "Intended Audience :: Aviation Industry",
-+        "Intended Audience :: Information Technology",
+        "Intended Audience :: Aviation Industry",
+        "Intended Audience :: Information Technology",
+        "Intended Audience :: Science/Research",
         
         # License
         "License :: OSI Approved :: MIT License",
@@ -52,12 +54,7 @@ setup(
         "Programming Language :: Python :: 3.11",
         
         # Environment and topics
-        "Development Status :: 3 - Alpha",
-        "Intended Audience :: Science/Research",
-        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.11",
         "Topic :: Scientific/Engineering :: Atmospheric Science",
     ],
     # Package requirements
